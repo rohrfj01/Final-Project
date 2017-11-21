@@ -10,11 +10,28 @@ using System.Windows.Forms;
 
 namespace Final_Project
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void btnViewAllSales_Click(object sender, EventArgs e)
+        {
+            ViewAllSalesForm viewallForm = new ViewAllSalesForm();
+            viewallForm.Show();
+        }
+
+        private void btnEditSales_Click(object sender, EventArgs e)
+        {
+            EditSalesForm viewEditForm = new EditSalesForm();
+            viewEditForm.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

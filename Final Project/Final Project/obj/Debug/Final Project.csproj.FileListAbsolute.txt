@@ -1,1 +1,11 @@
 C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\bin\Debug\Final Project.exe.config
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\bin\Debug\Final Project.exe
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\bin\Debug\Final Project.pdb
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\obj\Debug\Final Project.csprojResolveAssemblyReference.cache
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\obj\Debug\Final_Project.EditSalesForm.resources
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\obj\Debug\Final_Project.MainForm.resources
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\obj\Debug\Final_Project.Properties.Resources.resources
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\obj\Debug\Final_Project.ViewAllSalesForm.resources
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\obj\Debug\Final Project.csproj.GenerateResource.Cache
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\obj\Debug\Final Project.exe
+C:\Users\frohrba2\Desktop\GitHub Project\Final-Project\Final Project\Final Project\obj\Debug\Final Project.pdb
