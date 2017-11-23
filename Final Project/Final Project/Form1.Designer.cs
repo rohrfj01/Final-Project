@@ -34,8 +34,8 @@
             this.btnEditSales = new System.Windows.Forms.Button();
             this.btnEditIceCream = new System.Windows.Forms.Button();
             this.grpboxBaseFlavors = new System.Windows.Forms.GroupBox();
-            this.btnStrawberry = new System.Windows.Forms.CheckBox();
-            this.btnChocolate = new System.Windows.Forms.CheckBox();
+            this.chkboxStrawberry = new System.Windows.Forms.CheckBox();
+            this.chkboxChocolate = new System.Windows.Forms.CheckBox();
             this.chkboxVanilla = new System.Windows.Forms.CheckBox();
             this.grpboxToppings = new System.Windows.Forms.GroupBox();
             this.chkboxGummyBears = new System.Windows.Forms.CheckBox();
@@ -44,6 +44,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtboxBaseFlavorTotal = new System.Windows.Forms.TextBox();
+            this.txtboxToppingsTotal = new System.Windows.Forms.TextBox();
+            this.txtboxSalesTaxTotal = new System.Windows.Forms.TextBox();
+            this.txtboxGrandTotal = new System.Windows.Forms.TextBox();
+            this.lblBaseFlavor = new System.Windows.Forms.Label();
+            this.lblTotalToppings = new System.Windows.Forms.Label();
+            this.lblSalesTax = new System.Windows.Forms.Label();
+            this.lblGrandTotal = new System.Windows.Forms.Label();
             this.grpboxBaseFlavors.SuspendLayout();
             this.grpboxToppings.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -77,6 +85,7 @@
             this.btnConfirmSale.TabIndex = 2;
             this.btnConfirmSale.Text = "Confirm Sale";
             this.btnConfirmSale.UseVisualStyleBackColor = true;
+            this.btnConfirmSale.Click += new System.EventHandler(this.btnConfirmSale_Click);
             // 
             // btnEditSales
             // 
@@ -99,8 +108,8 @@
             // 
             // grpboxBaseFlavors
             // 
-            this.grpboxBaseFlavors.Controls.Add(this.btnStrawberry);
-            this.grpboxBaseFlavors.Controls.Add(this.btnChocolate);
+            this.grpboxBaseFlavors.Controls.Add(this.chkboxStrawberry);
+            this.grpboxBaseFlavors.Controls.Add(this.chkboxChocolate);
             this.grpboxBaseFlavors.Controls.Add(this.chkboxVanilla);
             this.grpboxBaseFlavors.Location = new System.Drawing.Point(52, 86);
             this.grpboxBaseFlavors.Name = "grpboxBaseFlavors";
@@ -109,25 +118,25 @@
             this.grpboxBaseFlavors.TabStop = false;
             this.grpboxBaseFlavors.Text = "Base Flavors";
             // 
-            // btnStrawberry
+            // chkboxStrawberry
             // 
-            this.btnStrawberry.AutoSize = true;
-            this.btnStrawberry.Location = new System.Drawing.Point(19, 131);
-            this.btnStrawberry.Name = "btnStrawberry";
-            this.btnStrawberry.Size = new System.Drawing.Size(98, 21);
-            this.btnStrawberry.TabIndex = 2;
-            this.btnStrawberry.Text = "Strawberry";
-            this.btnStrawberry.UseVisualStyleBackColor = true;
+            this.chkboxStrawberry.AutoSize = true;
+            this.chkboxStrawberry.Location = new System.Drawing.Point(19, 131);
+            this.chkboxStrawberry.Name = "chkboxStrawberry";
+            this.chkboxStrawberry.Size = new System.Drawing.Size(98, 21);
+            this.chkboxStrawberry.TabIndex = 2;
+            this.chkboxStrawberry.Text = "Strawberry";
+            this.chkboxStrawberry.UseVisualStyleBackColor = true;
             // 
-            // btnChocolate
+            // chkboxChocolate
             // 
-            this.btnChocolate.AutoSize = true;
-            this.btnChocolate.Location = new System.Drawing.Point(19, 87);
-            this.btnChocolate.Name = "btnChocolate";
-            this.btnChocolate.Size = new System.Drawing.Size(93, 21);
-            this.btnChocolate.TabIndex = 1;
-            this.btnChocolate.Text = "Chocolate";
-            this.btnChocolate.UseVisualStyleBackColor = true;
+            this.chkboxChocolate.AutoSize = true;
+            this.chkboxChocolate.Location = new System.Drawing.Point(19, 87);
+            this.chkboxChocolate.Name = "chkboxChocolate";
+            this.chkboxChocolate.Size = new System.Drawing.Size(93, 21);
+            this.chkboxChocolate.TabIndex = 1;
+            this.chkboxChocolate.Text = "Chocolate";
+            this.chkboxChocolate.UseVisualStyleBackColor = true;
             // 
             // chkboxVanilla
             // 
@@ -138,6 +147,7 @@
             this.chkboxVanilla.TabIndex = 0;
             this.chkboxVanilla.Text = "Vanilla";
             this.chkboxVanilla.UseVisualStyleBackColor = true;
+            this.chkboxVanilla.CheckedChanged += new System.EventHandler(this.chkboxVanilla_CheckedChanged);
             // 
             // grpboxToppings
             // 
@@ -203,14 +213,90 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(108, 26);
             this.exitToolStripMenuItem.Text = "&Exit";
+            // 
+            // txtboxBaseFlavorTotal
+            // 
+            this.txtboxBaseFlavorTotal.Enabled = false;
+            this.txtboxBaseFlavorTotal.Location = new System.Drawing.Point(737, 116);
+            this.txtboxBaseFlavorTotal.Name = "txtboxBaseFlavorTotal";
+            this.txtboxBaseFlavorTotal.Size = new System.Drawing.Size(135, 22);
+            this.txtboxBaseFlavorTotal.TabIndex = 8;
+            // 
+            // txtboxToppingsTotal
+            // 
+            this.txtboxToppingsTotal.Enabled = false;
+            this.txtboxToppingsTotal.Location = new System.Drawing.Point(737, 173);
+            this.txtboxToppingsTotal.Name = "txtboxToppingsTotal";
+            this.txtboxToppingsTotal.Size = new System.Drawing.Size(135, 22);
+            this.txtboxToppingsTotal.TabIndex = 9;
+            // 
+            // txtboxSalesTaxTotal
+            // 
+            this.txtboxSalesTaxTotal.Enabled = false;
+            this.txtboxSalesTaxTotal.Location = new System.Drawing.Point(737, 242);
+            this.txtboxSalesTaxTotal.Name = "txtboxSalesTaxTotal";
+            this.txtboxSalesTaxTotal.Size = new System.Drawing.Size(135, 22);
+            this.txtboxSalesTaxTotal.TabIndex = 10;
+            // 
+            // txtboxGrandTotal
+            // 
+            this.txtboxGrandTotal.Enabled = false;
+            this.txtboxGrandTotal.Location = new System.Drawing.Point(737, 304);
+            this.txtboxGrandTotal.Name = "txtboxGrandTotal";
+            this.txtboxGrandTotal.Size = new System.Drawing.Size(135, 22);
+            this.txtboxGrandTotal.TabIndex = 11;
+            // 
+            // lblBaseFlavor
+            // 
+            this.lblBaseFlavor.AutoSize = true;
+            this.lblBaseFlavor.Location = new System.Drawing.Point(587, 119);
+            this.lblBaseFlavor.Name = "lblBaseFlavor";
+            this.lblBaseFlavor.Size = new System.Drawing.Size(144, 17);
+            this.lblBaseFlavor.TabIndex = 12;
+            this.lblBaseFlavor.Text = "Total for Base Flavor:";
+            // 
+            // lblTotalToppings
+            // 
+            this.lblTotalToppings.AutoSize = true;
+            this.lblTotalToppings.Location = new System.Drawing.Point(603, 178);
+            this.lblTotalToppings.Name = "lblTotalToppings";
+            this.lblTotalToppings.Size = new System.Drawing.Size(128, 17);
+            this.lblTotalToppings.TabIndex = 14;
+            this.lblTotalToppings.Text = "Total for Toppings:";
+            // 
+            // lblSalesTax
+            // 
+            this.lblSalesTax.AutoSize = true;
+            this.lblSalesTax.Location = new System.Drawing.Point(603, 245);
+            this.lblSalesTax.Name = "lblSalesTax";
+            this.lblSalesTax.Size = new System.Drawing.Size(70, 17);
+            this.lblSalesTax.TabIndex = 15;
+            this.lblSalesTax.Text = "Sales Tax";
+            // 
+            // lblGrandTotal
+            // 
+            this.lblGrandTotal.AutoSize = true;
+            this.lblGrandTotal.Location = new System.Drawing.Point(643, 309);
+            this.lblGrandTotal.Name = "lblGrandTotal";
+            this.lblGrandTotal.Size = new System.Drawing.Size(88, 17);
+            this.lblGrandTotal.TabIndex = 16;
+            this.lblGrandTotal.Text = "Grand Total:";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 712);
+            this.Controls.Add(this.lblGrandTotal);
+            this.Controls.Add(this.lblSalesTax);
+            this.Controls.Add(this.lblTotalToppings);
+            this.Controls.Add(this.lblBaseFlavor);
+            this.Controls.Add(this.txtboxGrandTotal);
+            this.Controls.Add(this.txtboxSalesTaxTotal);
+            this.Controls.Add(this.txtboxToppingsTotal);
+            this.Controls.Add(this.txtboxBaseFlavorTotal);
             this.Controls.Add(this.grpboxToppings);
             this.Controls.Add(this.grpboxBaseFlavors);
             this.Controls.Add(this.btnEditIceCream);
@@ -222,6 +308,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "FJ\'s Ice Cream Shop";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpboxBaseFlavors.ResumeLayout(false);
             this.grpboxBaseFlavors.PerformLayout();
             this.grpboxToppings.ResumeLayout(false);
@@ -241,9 +328,9 @@
         private System.Windows.Forms.Button btnEditSales;
         private System.Windows.Forms.Button btnEditIceCream;
         private System.Windows.Forms.GroupBox grpboxBaseFlavors;
-        private System.Windows.Forms.CheckBox btnChocolate;
+        private System.Windows.Forms.CheckBox chkboxChocolate;
         private System.Windows.Forms.CheckBox chkboxVanilla;
-        private System.Windows.Forms.CheckBox btnStrawberry;
+        private System.Windows.Forms.CheckBox chkboxStrawberry;
         private System.Windows.Forms.GroupBox grpboxToppings;
         private System.Windows.Forms.CheckBox chkboxGummyBears;
         private System.Windows.Forms.CheckBox chkboxChocolateSauce;
@@ -251,6 +338,14 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtboxBaseFlavorTotal;
+        private System.Windows.Forms.TextBox txtboxToppingsTotal;
+        private System.Windows.Forms.TextBox txtboxSalesTaxTotal;
+        private System.Windows.Forms.TextBox txtboxGrandTotal;
+        private System.Windows.Forms.Label lblBaseFlavor;
+        private System.Windows.Forms.Label lblTotalToppings;
+        private System.Windows.Forms.Label lblSalesTax;
+        private System.Windows.Forms.Label lblGrandTotal;
     }
 }
 
